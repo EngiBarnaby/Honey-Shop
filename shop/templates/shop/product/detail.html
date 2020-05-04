@@ -13,6 +13,12 @@
     {% for price in product.prices.all %}
       <p class = "product-price">{{ price.value }}л за {{ price.price }}р</p>
     {% endfor %}
+    <div class="add_cart">
+        <form action="{% url 'cart:cart_add' product.id %}" method="post">
+          {{ cart_product_form }}
+          {% csrf_token %}
+          <input type="submit" value="Add to cart">
+        </form>
+    </div
   </div>
-  <script src="multiselect.min.js"></script>
 {% endblock %}

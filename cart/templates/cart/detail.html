@@ -1,0 +1,32 @@
+{% extends "shop/base.html" %}
+{% block title %}Корзина{% endblock %}
+
+{% block content %}
+  <div class="cart">
+    <table>
+      <caption class="title-cart" >Ваша карзина</caption>
+      <thead>
+        <th>Название</th>
+        <th>Изображение</th>
+        <th>Цена</th>
+        <th>Количество</th>
+      </thead>
+      <tbody>
+        {% for item in cart %}
+          {% with product=item.product %}
+          <tr>
+            <td>{{ product.name }}</td>
+            <td>
+              <a href="{{ product.get_absolute_url }}">
+              <img src="{% if product.image %}{{ product.image.url }}{% endif %}">
+              </a>
+            </td>
+            <td>{{ product.price }}</td>
+            <td>{{ item.quantity }}</td>
+          </tr>
+          {% endwith %}
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
