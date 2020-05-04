@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 
 
+a {
+  text-decoration: none;
+  color: black;
+}
 html {
   background-color: #f3ec8c;
 }
@@ -103,7 +107,7 @@ header h2 {
 
 .product-detail .product-price {
     color:#333;
-    font-size:28px;
+    font-size:15px;
     font-weight:bold;
-    
+
 }
