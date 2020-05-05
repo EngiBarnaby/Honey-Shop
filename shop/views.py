@@ -14,6 +14,9 @@ def product_list(request, category_slug=None):
 
 def product_detail(request, slug, id):
     product = Product.objects.get(slug__iexact=slug)
+    # cart_product_form.fields['size'] = values
     cart_product_form = CartAddProductForm()
-    context = {"product" : product, "cart_product_form": cart_product_form}
+    value_form = ValueForm(id)
+    # cart_product_form.fields['size'].choices = values
+    context = {"product" : product, "cart_product_form": cart_product_form, 'value_form' : value_form}
     return render(request, "shop/product/detail.html", context)

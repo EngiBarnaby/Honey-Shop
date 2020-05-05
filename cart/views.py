@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse
 from .cart import Cart
 from shop.models import Product
 from django.views.decorators.http import require_POST
@@ -14,6 +15,8 @@ def cart_add(request, product_id):
         cd = form.cleaned_data
         cart.add(product=product, quantity=cd['quantity'], update_quantity=cd['update'])
         return redirect('cart:cart_detail')
+    else:
+        return HttpResponse()
 
 
 def cart_remove(request, product_id):
