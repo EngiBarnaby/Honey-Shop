@@ -12,5 +12,5 @@ class ValueForm(forms.Form):
     def __init__(self, product_id, *args, **kwargs):
         super(ValueForm, self).__init__(*args, **kwargs)
         self.fields['size'] = forms.ChoiceField(
-            choices=[(str(i['value']), str(i['value'])) for i in Product.objects.get(id=product_id).prices.values('value')]
+            choices=[(i['value'], str(i['value'])) for i in Product.objects.get(id=product_id).prices.values('value')]
         )

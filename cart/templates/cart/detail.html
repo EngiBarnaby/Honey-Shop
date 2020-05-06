@@ -2,8 +2,8 @@
 {% block title %}Корзина{% endblock %}
 
 {% block content %}
-  <div class="cart">
-    <table>
+  <div class="cart-table">
+    <table class='cart'>
       <caption class="title-cart" >Ваша карзина</caption>
       <thead>
         <th>Название</th>
@@ -24,10 +24,16 @@
             </td>
             <td>{{ product.price }}</td>
             <td>{{ item.quantity }}</td>
+            <td>{{ item.size }}</td>
           </tr>
           {% endwith %}
         {% endfor %}
       </tbody>
+      <tfoot>
+        <tr>
+          <td><h2><a href="{% url 'cart:cart_clear' %}">Удалить карзину</a></h2></td>
+        </tr>
+      </tfoot>
     </table>
   </div>
 {% endblock %}

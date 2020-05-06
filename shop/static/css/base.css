@@ -111,3 +111,34 @@ header h2 {
     font-weight:bold;
 
 }
+
+.cart img{
+  width: 100px;
+}
+
+.cart table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.cart th, td {
+  padding: 10px 15px;
+}
+
+.cart thead {
+  background:  #bdeee0;
+  color: #fff;
+}
+
+.cart tbody tr:nth-child(even){
+  background: #f0f0f2;
+}
+
+.cart td {
+  border-bottom: 1px solid #cecfd5;
+  border-right: 1px solid #cecfd5;
+}
+
+td:first-child {
+  border-left: 1px solid #cecfd5;
+}
