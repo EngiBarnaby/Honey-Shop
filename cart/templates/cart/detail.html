@@ -11,6 +11,7 @@
         <th>Цена</th>
         <th>Количество</th>
         <th>Размер</th>
+        <th>Общая стоимость</th>
       </thead>
       <tbody>
         {% for item in cart %}
@@ -24,12 +25,16 @@
             </td>
             <td>{{ product.price }}</td>
             <td>{{ item.quantity }}</td>
-            <td>{{ item.size }}</td>
+            <td>{% for item in item.size %}{{ item }}{% endfor %}</td>
+            <td>{{ item.total_price }}</td>
           </tr>
           {% endwith %}
         {% endfor %}
       </tbody>
       <tfoot>
+        <tr>
+          <td><p>Общая цена {{ cart.get_total_price }}</p></td>
+        </tr>
         <tr>
           <td><h2><a href="{% url 'cart:cart_clear' %}">Удалить карзину</a></h2></td>
         </tr>

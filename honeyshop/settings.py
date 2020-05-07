@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
     'django.contrib.admin',
@@ -104,6 +105,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
+LOGIN_REDIRECT_URL = 'shop:product_list'
+
+LOGIN_URL = 'account:login'
+
+LOGOUT_URL = 'account:logout'
 
 LANGUAGE_CODE = 'en-us'
 
