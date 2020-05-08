@@ -12,9 +12,12 @@
         <h2>МёдТорг</h2>
         <div class="user-menu">
           {% if request.user.is_authenticated %}
-            Здраствуйте {{ request.user.username }},
+            <a href="{% url 'account:user_profil' username=request.user.username %}">
+              Здраствуйте {{ request.user.username }},
+            </a>
             <a href="{% url 'account:logout' %}">Выйти</a>
           {% else %}
+            <a href="{% url 'account:register_user' %}">Зарегистрироваться</a>
             <a href="{% url 'account:login' %}">Войти</a>
           {% endif %}
         </div>
