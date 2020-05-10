@@ -3,7 +3,7 @@
 
 a {
   text-decoration: none;
-  color: #15bafd;
+  color: black;
 }
 html {
   background-color: #f3ec8c;
@@ -41,7 +41,7 @@ body {
 }
 
 .header a:active {
-  color: blue;
+  color: #15bafd;
 }
 
 #content {
