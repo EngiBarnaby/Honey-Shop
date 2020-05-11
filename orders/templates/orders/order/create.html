@@ -1,0 +1,25 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}Оформление заказа{% endblock %}
+
+{% block content %}
+
+  <div class="create-order">
+    <ul>
+      {% for item in cart %}
+        <li>
+          {{ item.quantity }}шт. {{ item.product.name }}
+          <p>{{ item.total_price }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <p>Общая сумма: {{ cart.get_total_price }}</p>
+  </div>
+
+  <form action="." method="post" class="create-order-form">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Оформить заказ">
+  </form>
+
+{% endblock %}

@@ -35,10 +35,10 @@
         <tr>
           <td><p>Общая цена {{ cart.get_total_price }}</p></td>
         </tr>
-        <tr>
-          <td><h2><a href="{% url 'cart:cart_clear' %}">Удалить карзину</a></h2></td>
-        </tr>
       </tfoot>
     </table>
+    <h3><a href="{% url 'orders:order_create' %}">Оформить заказ</a></h3>
+    <h3><a href="{% url 'shop:product_list' %}">Продолжить покупки</a></h3>
+    <h3><a href="{% url 'cart:cart_clear' %}">Удалить карзину</a></h3>
   </div>
 {% endblock %}

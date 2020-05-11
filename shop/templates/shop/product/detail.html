@@ -15,10 +15,10 @@
     {% endfor %}
     <div class="add_cart">
         <form action="{% url 'cart:cart_add' product.id %}" method="post">
-          {{ cart_product_form.as_p }}
-          {{ value_form }}
+          <p>Количество{{ cart_product_form.quantity }}</p>
+          <p>Объём{{ value_form.size }}</p>
           {% csrf_token %}
-          <input type="submit" value="Add to cart">
+          <input type="submit" value="Добавить в карзину">
         </form>
     </div
   </div>
