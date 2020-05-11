@@ -29,7 +29,7 @@
         <a href="{{ product.get_absolute_url }}">
           <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
         </a>
-        <p class="product-price">{{ product.price }}</p>
+        <p class="product-price">{{ product.prices.first.another_price }}</p>
       </div>
     {% endfor %}
   </div>

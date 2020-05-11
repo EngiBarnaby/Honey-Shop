@@ -23,7 +23,7 @@
               <img src="{% if product.image %}{{ product.image.url }}{% endif %}">
               </a>
             </td>
-            <td>{{ product.price }}</td>
+            <td>{{ item.price }}</td>
             <td>{{ item.quantity }}</td>
             <td>{% for item in item.size %}{{ item }}{% endfor %}</td>
             <td>{{ item.total_price }}</td>
