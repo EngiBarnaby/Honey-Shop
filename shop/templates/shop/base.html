@@ -9,7 +9,9 @@
   </head>
   <body>
     <div class="header">
-        <h2>МёдТорг</h2>
+        <div class="logo">
+          <a href="/">Мёд торг</a>
+        </div>
         <div class="user-menu">
           {% if request.user.is_authenticated %}
             <a href="{% url 'account:user_profil' username=request.user.username %}">
@@ -21,13 +23,18 @@
             <a href="{% url 'account:login' %}">Войти</a>
           {% endif %}
         </div>
+        {% if request.user.is_authenticated %}
+          <div class="user-cart">
+            <a id='user-cart' href="{% url 'cart:cart_detail' %}">Ваша корзина</a>
+          </div>
+        {% endif %}
     </div>
     <div id="content">
       {% block content %}
       {% endblock %}
     </div>
     <div class="footer">
-      
+
     </div>
   </body>
 </html>
