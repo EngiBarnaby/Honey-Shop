@@ -6,7 +6,11 @@
   <div class="user-registration">
     <form action="." method="post">
       {% csrf_token %}
-      {{ user_form.as_p }}
+      <p>Имя пользователя{{ user_form.username }}</p>
+      <p>Имя{{ user_form.first_name }}</p>
+      <p>Ваш email{{ user_form.email }}</p>
+      <p>Пароль{{ user_form.password }}</p>
+      <p>Повтор пароля{{ user_form.password2 }}</p>
       <input type="submit" value="Регистрация">
     </form>
   </div>

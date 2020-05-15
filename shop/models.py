@@ -10,8 +10,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ('name',)
-        verbose_name = 'category'
-        verbose_name_plural = 'categories'
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
     def get_absolute_url(self):
         return reverse("shop:product_list_by_category", args=[self.slug])
@@ -30,6 +30,8 @@ class Product(models.Model):
     class Meta:
         ordering = ('name',)
         index_together = (('id', 'slug'),)
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
 
     def __str__(self):
         return self.name
@@ -44,3 +46,7 @@ class ValueAndPrices(models.Model):
 
     def __str__(self):
         return str(self.value)
+
+    class Meta:
+        verbose_name = 'Величина и цена'
+        verbose_name_plural = "Величины и цены"
